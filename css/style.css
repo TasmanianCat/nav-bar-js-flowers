@@ -1,0 +1,471 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html, body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+input,button,textarea{font-family: inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+
+html,body{
+	height: 100%;
+}
+
+body {
+	background-image: url('../img/background-img-2-less.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+
+.lock-scroll {
+	overflow: hidden;
+}
+
+.logo {
+	display: block;
+	width: 100%;
+	max-width: 21rem;
+	margin: 0 auto;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+@media screen and (max-height: 87.5em) {
+	.logo {
+		max-width: 20rem;
+	}
+}
+
+@media screen and (max-height: 85.5em) {
+	.logo {
+		max-width: 19rem;
+	}
+}
+
+@media screen and (max-height: 64em) {
+	.logo {
+		max-width: 18rem;
+	}
+}
+
+@media screen and (max-height: 43.75em) {
+	.logo {
+		max-width: 17rem;
+	}
+}
+
+@media screen and (max-height: 33.75em) {
+	.logo {
+		max-width: 14rem;
+	}
+}
+
+@media screen and (max-height: 28.125em) {
+	.logo {
+		max-width: 12rem;
+	}
+}
+
+@media screen and (max-height: 25em) {
+	.logo {
+		max-width: 10rem;
+	}
+}
+
+@media screen and (max-height: 22.5em) {
+	.logo {
+		max-width: 8rem;
+	}
+}
+
+@media screen and (max-width: 18.75em) {
+	.fa-whatsapp {
+		bottom: 8rem;
+	}
+}
+
+@media screen and (max-width: 17.5em) {
+	.fa-whatsapp {
+		bottom: 10rem;
+	}
+}
+
+@media screen and (max-height: 18em) {
+	.logo {
+		max-width: 6rem;
+	}
+	h2 {
+		font-size: 1.2rem;
+		line-height: 0.02rem;
+		margin: 2rem;
+	}
+	.p-main {
+		font-size: 1rem;
+	}
+}
+
+button {
+	border: 2px solid white;
+}
+
+h1 {
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size: 5rem;
+	padding-bottom: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	text-shadow: 0 0 5px #312c2c, 0 0 8px #000000;
+}
+
+h2 {
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size: 1.875rem;
+	padding-bottom: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05rem;
+	margin-right: 0.5rem;
+}
+
+.p-main {
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size: 1.5rem;
+	line-height: 1.5;
+	letter-spacing: 0.1rem;
+	text-shadow: 0 0 3px #000000, 0 0 5px #000000;
+}
+
+.p-footer {
+	font-size: 1rem;
+	line-height: 1.5;
+	letter-spacing: 0.1rem;
+}
+
+/* The Overlay (background) */
+.overlay-menu {
+	/* Height & width depends on how you want to reveal the overlay (see JS below) */
+	height: 0;
+	width: 100%;
+	position: fixed;
+	/* Stay in place */
+	z-index: 1;
+	/* Sit on top */
+	left: 0;
+	top: 0;
+	background-color: rgb(0, 0, 0);
+	/* Black fallback color */
+
+	/*background-color: rgba(0, 0, 0, 0.9);*/
+	/* Black w/opacity */
+
+	overflow-x: hidden;
+	/* Disable horizontal scroll */
+	overflow-y: hidden;
+	/* Disable vertical scroll */
+	transition: 0.5s;
+	/* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+	position: relative;
+	top: 25%;
+	/* 25% from the top */
+	width: 100%;
+	/* 100% width */
+	text-align: center;
+	/* Centered text/links */
+	margin-top: 1.875rem;
+	/* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay-menu a {
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	padding: 1rem 0.5rem;
+	text-decoration: none;
+	font-size: 2.25rem;
+	color: #818181;
+	display: block;
+	letter-spacing: 0.15rem;
+	/* Display block instead of inline */
+	transition: 0.3s;
+	/* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay-menu a:hover,
+.overlay-menu a:focus {
+	color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay-menu .closebtn {
+	position: absolute;
+	top: 1.25rem;
+	right: 2.8125rem;
+	font-size: 3.75rem;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 28.125em) {
+	.overlay-menu a {
+		font-size: 1.25rem;
+	}
+	.overlay-menu .closebtn {
+		font-size: 2.5rem;
+		top: 0.9375rem;
+		right: 2.1875rem;
+	}
+}
+
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.main {
+	flex: 1 1 auto;
+}
+
+.header {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	padding-left: 1.3rem;
+	padding-right: 1.3rem;
+	margin-bottom: 3rem;
+	color: white;
+}
+
+.footer {
+	width: 100%;
+	background-color: #000;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	color: white;
+	text-align: center;
+	padding-top: 0.625rem;
+	padding-bottom: 0.625rem;
+}
+
+.made-by {
+	font-size: 1rem;
+	line-height: 1.5;
+	color: gray;
+}
+
+.made-by a {
+	color: gray;
+}
+
+.index-span {
+	display: block;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* the button 'МЕНЮ' */
+.fa-whatsapp {
+	display: block;
+	margin: 1rem;
+	position: absolute;
+	bottom: 70px;
+	right: 10px;
+}
+
+a:hover {
+	text-shadow: 1px 1px 10px rgb(95, 247, 128);
+	transition: all 0.5s ease-out;
+}
+
+/* the Modal */
+.index-modal {
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#modal-0 {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+}
+
+span {
+	min-width: 11rem;
+	margin: 0 auto;
+	font-family: 'Lucida Sans',
+			'Lucida Sans Regular',
+			'Lucida Grande',
+			'Lucida Sans Unicode',
+			Geneva,
+			Verdana,
+			sans-serif;
+	text-transform: uppercase;
+	padding: 16px 14px;
+	font-size: 1.4rem;
+	font-weight: 800;
+	letter-spacing: 0.15rem;
+	text-align: center;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	border-radius: 12px;
+	background-color: rgb(11, 85, 4);
+	color: rgb(236, 236, 236);
+	border: 2px solid white;
+	cursor: pointer;
+}
+
+span:hover {
+	color: rgb(45, 45, 49);
+	background-color: rgb(205, 248, 199);
+	box-shadow: 1px 1px 10px rgb(95, 247, 202);
+	transition: all 0.3s ease-out;
+}
+
+.close-modal {
+	position: absolute;
+	top: 0.3rem;
+	right: 0.7rem;
+	font-size: 2rem;
+	font-weight: 800;
+	color: #333;
+	cursor: pointer;
+	border: none;
+	background: none;
+}
+
+.hidden {
+	display: none;
+}
+
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgb(213, 224, 217);
+	padding: 1.5rem;
+	border-radius: 12px;
+	box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+	z-index: 10;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	line-height: 1.5;
+}
+
+/* Overlay-modal */
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(3px);
+	z-index: 5;
+}
+
+.checkbox-input {
+	float: left;
+	margin-right: 0.3rem;
+}
+
+.text-agreement {
+	font-size: 0.8rem;
+	color: green;
+}
+
+.select {
+	width: 100%;
+	font-size: 1rem;
+	line-height: 1.5;
+	padding: 11px 6px;
+	margin-bottom: 0.5rem;
+	border-radius: 12px;
+	background-color: white;
+}
+
+.form-input {
+	width: 100%;
+	font-size: 1rem;
+	line-height: 1.5;
+	padding: 8px 6px;
+	margin-bottom: 0.5rem;
+	border-radius: 12px;
+	background-color: white;
+}
+
+textarea {
+	width: 100%;
+	padding: 6px;
+	font-size: 1rem;
+	line-height: 1.5;
+	margin-top: 0.5rem;
+	border-radius: 12px;
+	resize: vertical;
+	background-color: white;
+}
+
+.form-button {
+	display: block;
+	margin: 0 auto;
+	font-family: 'Lucida Sans',
+			'Lucida Sans Regular',
+			'Lucida Grande',
+			'Lucida Sans Unicode',
+			Geneva,
+			Verdana,
+			sans-serif;
+	text-align: center;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	padding: 16px 14px;
+	font-size: 1.3rem;
+	border-radius: 12px;
+	border: 2px solid green;
+	text-transform: uppercase;
+	letter-spacing: 0.15rem;
+	font-weight: 600;
+	background-color: rgb(2, 2, 2);
+	color: rgb(236, 236, 236);
+	cursor: pointer;
+}
+
+.form-button:hover {
+	color: black;
+	background-color: rgb(255, 255, 255);
+	transition: all 0.5s ease-out;
+}

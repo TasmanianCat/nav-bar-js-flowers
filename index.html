@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<title>Flowers</title>
+	<meta name="author" content="Sergei S.">
+	<meta name="description" content="Example description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<!-- The overlay -->
+		<div id="myNav" class="overlay-menu">
+
+			<!-- Button to close the overlay navigation -->
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+			<!-- Overlay content -->
+			<div class="overlay-content">
+				<a href="#">Главная</a>
+				<a href="#">Услуги</a>
+				<a href="#">Цены</a>
+				<a href="#">Доставка</a>
+				<a href="#">Контакты</a>
+
+			</div>
+		</div>
+		<!-- Use any element to open/show the overlay navigation menu -->
+		<div>
+
+		</div>
+		<span onclick="openNav()">Меню</span>
+		<header class="header">
+			<img class="logo" src="img/buket-white-logo.png" alt="logo">
+			<p class="p-main">Всегда свежие цветы, свадебные букеты с бережной доставкой</p>
+		</header>
+		<main class="main">
+			<div class="index-modal">
+				<span id="modal-0" class="show-modal">Заказать</span>
+			</div>
+			<div id="modal-0" class="modal hidden">
+				<button class="close-modal">&times;</button>
+
+				<div class="form-body">
+					<form action="#" id="form">
+						<div class="form-item">
+							<label for="formFlowers" class="form-label">Выберите цветы*:</label>
+							<select class="select" name="plants" id="plants" required autofocus>
+								<optgroup label="Садовые">Садовые</option>
+									<option value="Розы">Розы</option>
+									<option value="Тюльпаны">Тюльпаны</option>
+									<option value="Гвоздики">Гвоздики</option>
+									<option value="Лилии">Лилии</option>
+									<option value="Пионы">Пионы</option>
+									<option value="Хризантемы">Хризантемы</option>
+								</optgroup>
+								<optgroup label="Комнатные">
+									<option value="Орхидея">Орхидея</option>
+									<option value="Каланхоэ">Каланхоэ</option>
+									<option value="Примула">Примула</option>
+									<option value="Клеродендрум">Клеродендрум</option>
+									<option value="Хлорофитум">Хлорофитум</option>
+									<option value="Экзакум">Экзакум</option>
+								</optgroup>
+							</select>
+
+							<label for="color" class="form-label">Цвет*:</label>
+							<select class="select" id="color" name="color">
+								<option value="red">Красный</option>
+								<option value="yellow">Желтый</option>
+								<option value="pink">Розовый</option>
+								<option value="white">Белый</option>
+								<option value="сpurpur">Cиреневый</option>
+							</select>
+
+							<label for="formNumber" class="form-label">Количество*:</label>
+							<input id="formNumber" type="text" name="number" class="form-input"
+								placeholder="Укажите от 1 до 999 шт." pattern="[0-9]+" maxlength="3" required>
+
+							<label for="formPackaging" class="form-label">Упаковка*:</label>
+							<select class="select" id="row-material-pack" name="row-material-pack">
+								<option value="Не требуется">Не требуется</option>
+								<option value="Бумага">Бумага</option>
+								<option value="Коробка">Коробка</option>
+								<option value="Корзина">Корзина</option>
+								<option value="Пленка прозрачная">Пленка прозрачная</option>
+							</select>
+
+							<label for="phone">Ваш номер телефона*:</label>
+							<input type="tel" id="phone" name="phone" class="form-input"
+								placeholder="999 111 2233 (БЕЗ +7 / 8)" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" required>
+
+							<label for="username">Как к, Вам, обращаться?*:</label>
+							<input type="text" id="username" name="username" class="form-input"
+								placeholder="Имя / Имя и отчество" required>
+
+							<label for="formAddress" class="form-label">Доставка*:</label>
+							<select class="select" id="delivery" name="delivery">
+								<option value="Самовывоз">Самовывоз</option>
+								<option value="Требуется">Требуется доставка</option>
+							</select>
+						</div>
+
+				</div>
+
+				<div>
+					<label for="formMessage" class="form-label">Дополнительная информация:</label>
+					<textarea placeholder="Ваши коментарии и/или адрес доставки укажите здесь" rows="3"></textarea>
+				</div>
+
+				<div class="form-item">
+					<div class="checkbox">
+						<input id="formAgreement" checked type="checkbox" name="agreement" class="checkbox-input"
+							required>
+						<label for="formAgreement" class="checkbox-label">
+							<p class="text-agreement">Я даю своё согласие на обработку моих персональных
+								данных для того, чтобы сотрудник магазина смог уточнить детали и выполнить мой
+								заказ.
+							</p>
+							<div>
+								<button type="submit" class="form-button">Отправить</button>
+							</div>
+						</label>
+					</div>
+				</div>
+				</form>
+			</div>
+	</div>
+	<div class="overlay hidden"></div>
+	<div>
+		<a href="https://api.whatsapp.com/send?phone=79372374089"><i class="fa fa-whatsapp"
+				style="font-size:3rem;color:rgb(44, 145, 44);"></i></a>
+	</div>
+	</main>
+	<footer class="footer">
+		<div class="class-footer">
+			<p class="p-footer">© 2022 Сеть салонов цветов "Букет"</p>
+			<p class="made-by">Made by <a href="#">The Tasmanian Cat Studio</a></p>
+		</div>
+	</footer>
+	</div>
+	<script type="text/javascript" src="./js/javascript.js"></script>
+	<script type="text/javascript" src="./js/modal.js"></script>
+</body>
+
+</html>
